@@ -28,9 +28,14 @@ This project showcases transfer learning for image classification using PyTorch.
 ├── transfer_learning.ipynb          # Main notebook: Transfer learning implementation
 ├── comparison_notebook.ipynb        # Comparison: Transfer learning vs. from scratch
 ├── requirements.txt                 # Python dependencies
+├── QUICKSTART.md                    # Quick start guide (5-minute setup!)
 ├── .gitignore                      # Git ignore rules
 └── README.md                       # This file
 ```
+
+## ⚡ Quick Start
+
+**New to this project?** Check out [QUICKSTART.md](QUICKSTART.md) for a 5-minute setup guide!
 
 ## 🛠️ Installation
 
