@@ -120,7 +120,7 @@ Open `comparison_notebook.ipynb` to:
 jupyter notebook comparison_notebook.ipynb
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 Key hyperparameters (found in both notebooks):
 
