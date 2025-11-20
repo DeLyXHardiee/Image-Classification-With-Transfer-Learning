@@ -2,7 +2,7 @@
 
 A comprehensive PyTorch implementation demonstrating fine-tuning of pre-trained CNNs on custom datasets, with detailed comparisons between transfer learning and training from scratch.
 
-## 📋 Overview
+## Overview
 
 This project showcases transfer learning for image classification using PyTorch. It includes:
 - Fine-tuning pre-trained ResNet50 on custom datasets
@@ -11,7 +11,7 @@ This project showcases transfer learning for image classification using PyTorch.
 - Side-by-side comparison of transfer learning vs. training from scratch
 - Production-ready Jupyter notebooks with extensive documentation
 
-## 🚀 Features
+## Features
 
 - **Multiple Pre-trained Models**: ResNet50 (easily adaptable to EfficientNet, ViT)
 - **Data Augmentation**: Random flips, rotations, color jitter, and affine transformations
@@ -21,7 +21,7 @@ This project showcases transfer learning for image classification using PyTorch.
 - **Comparative Analysis**: Transfer learning vs. from-scratch training
 - **GPU Support**: Automatic CUDA detection and optimization
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 .
@@ -33,11 +33,11 @@ This project showcases transfer learning for image classification using PyTorch.
 └── README.md                       # This file
 ```
 
-## ⚡ Quick Start
+## Quick Start
 
 **New to this project?** Check out [QUICKSTART.md](QUICKSTART.md) for a 5-minute setup guide!
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -62,7 +62,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 📊 Dataset Preparation
+## Dataset Preparation
 
 ### Option 1: Use Demo Dataset
 The notebooks automatically download the Flowers102 dataset for demonstration if no custom dataset is provided.
@@ -85,7 +85,7 @@ data/
 
 Place your dataset in the `./data` directory, and the notebooks will automatically load it.
 
-## 📓 Usage
+## Usage
 
 ### 1. Transfer Learning Notebook
 
@@ -136,7 +136,7 @@ CONFIG = {
 }
 ```
 
-## 📈 Outputs
+## Outputs
 
 After training, the notebooks generate:
 
@@ -156,7 +156,7 @@ After training, the notebooks generate:
 - Misclassification analysis
 - Training/validation loss curves
 
-## 🎯 Model Architecture
+## Model Architecture
 
 ### Transfer Learning Approach
 ```
@@ -175,7 +175,7 @@ ResNet50 (Pre-trained on ImageNet)
 - Better performance on small datasets
 - Less prone to overfitting
 
-## 📊 Expected Results
+## Expected Results
 
 ### Transfer Learning (10 epochs, small dataset)
 - **Validation Accuracy**: 70-90% (dataset dependent)
@@ -187,7 +187,7 @@ ResNet50 (Pre-trained on ImageNet)
 - **Training Time**: 20-60 minutes (with GPU)
 - **Convergence**: Slower, requires more epochs
 
-## 🔬 Experiments
+## Experiments
 
 ### Try Different Models
 
@@ -214,70 +214,10 @@ for param in model.layer4.parameters():
     param.requires_grad = True
 ```
 
-## 📝 Citation
 
-If you use this code in your research, please cite:
-
-```bibtex
-@misc{image-classification-transfer-learning,
-  author = {DeLyXHardiee},
-  title = {Image Classification With Transfer Learning},
-  year = {2024},
-  publisher = {GitHub},
-  url = {https://github.com/DeLyXHardiee/Image-Classification-With-Transfer-Learning}
-}
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to:
-- Report bugs
-- Suggest features
-- Submit pull requests
-- Share your results
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 🔗 Resources
+## Resources
 
 - [PyTorch Documentation](https://pytorch.org/docs/)
 - [Transfer Learning Guide](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html)
 - [ResNet Paper](https://arxiv.org/abs/1512.03385)
 - [ImageNet Dataset](https://www.image-net.org/)
-
-## 💡 Tips for Best Results
-
-1. **Data Quality**: Clean, well-labeled data is crucial
-2. **Augmentation**: Essential for small datasets
-3. **Learning Rate**: Start with 0.001, adjust if needed
-4. **Batch Size**: Larger batches (32-64) generally work better
-5. **Early Stopping**: Monitor validation loss to prevent overfitting
-6. **Class Balance**: Ensure relatively balanced class distribution
-
-## 🐛 Troubleshooting
-
-**CUDA Out of Memory:**
-- Reduce batch size
-- Use smaller image size (e.g., 128x128)
-- Reduce model capacity
-
-**Poor Performance:**
-- Increase training epochs
-- Adjust learning rate
-- Check data quality and labels
-- Try different augmentation strategies
-
-**Slow Training:**
-- Ensure GPU is being used (`device = 'cuda'`)
-- Increase num_workers in DataLoader
-- Use mixed precision training
-
-## 📧 Contact
-
-For questions or feedback, please open an issue on GitHub.
-
----
-
-**Happy Training! 🚀**
