@@ -43,6 +43,9 @@ dataset/
 models/
 checkpoints/
 
+# Experiment runs
+runs/
+
 # IDE
 .vscode/
 .idea/

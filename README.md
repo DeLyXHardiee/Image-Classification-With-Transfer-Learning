@@ -65,7 +65,7 @@ pip install -r requirements.txt
 ## Dataset Preparation
 
 ### Option 1: Use Demo Dataset
-The notebooks automatically download the Flowers102 dataset for demonstration if no custom dataset is provided.
+The notebooks automatically download the Flowers102 dataset for demonstration if no custom dataset is provided. By default we fine-tune on the first 20 classes to keep experiments fast and reproducible; adjust `CONFIG['max_classes']` in the notebooks if you want to include more categories.
 
 ### Option 2: Custom Dataset
 Organize your images in the following structure:
@@ -133,14 +133,15 @@ CONFIG = {
     'train_split': 0.8,         # Train/validation split ratio
     'image_size': 224,          # Input image size (224x224)
     'num_workers': 2,           # Data loader workers
+    'max_classes': 20,          # Limit how many Flowers102 classes are used (default 20)
 }
 ```
 
 ## Outputs
 
-After training, the notebooks generate:
+After training, the notebooks generate a timestamped folder under `runs/` (for example, `runs/run-20251125-153012`). Every run folder contains all artifacts for that execution, so previous results are never overwritten and can be compared later. Each folder includes a `changes.md` ledger summarizing the configuration, metrics, and paths to the artifacts that were produced.
 
-### Saved Files
+### Saved Files (per run)
 - `best_model.pth` - Best model weights based on validation accuracy
 - `transfer_learning_model.pth` - Complete training checkpoint
 - `training_history.png` - Training and validation curves
@@ -148,6 +149,7 @@ After training, the notebooks generate:
 - `confusion_matrix_normalized.png` - Normalized confusion matrix
 - `misclassifications.png` - Visualization of misclassified samples
 - `per_class_accuracy.png` - Per-class performance breakdown
+- `changes.md` - Markdown summary detailing what changed during the run
 
 ### Performance Metrics
 - Overall accuracy

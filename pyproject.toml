@@ -1,0 +1,20 @@
+[project]
+name = "image-classification-transfer-learning"
+version = "0.1.0"
+requires-python = ">=3.11, <3.14"
+dependencies = [
+    "ipykernel>=7.1.0",
+    "torch==2.9.0",
+    "torchvision==0.24.0",
+]
+
+# Add PyTorch CUDA 13 index
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+# Tell uv to use this index for torch + torchvision
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130" }]
+torchvision = [{ index = "pytorch-cu130" }]
