@@ -11,7 +11,6 @@ from torch.utils.data import Dataset
 
 
 class FilteredFlowersDataset(Dataset):
-    """Subset of Flowers102 that remaps labels to a consecutive range."""
 
     def __init__(
         self,
@@ -37,8 +36,6 @@ class FilteredFlowersDataset(Dataset):
 
 
 def mixup_data(inputs: Tensor, targets: Tensor, alpha: float = 0.4):
-    """Apply mixup augmentation to a batch of inputs/targets."""
-
     if alpha <= 0:
         return inputs, targets, targets, 1.0
     lam = np.random.beta(alpha, alpha)
@@ -49,6 +46,4 @@ def mixup_data(inputs: Tensor, targets: Tensor, alpha: float = 0.4):
 
 
 def mixup_criterion(criterion, preds: Tensor, targets_a: Tensor, targets_b: Tensor, lam: float):
-    """Compute mixup loss for blended targets."""
-
     return lam * criterion(preds, targets_a) + (1 - lam) * criterion(preds, targets_b)
